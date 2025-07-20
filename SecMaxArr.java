@@ -1,8 +1,6 @@
 public class SecMaxArr {
     public static void main(String[] args) {
         int[] arr = {33,356,563,22,335,11010};
-
-
         int maxIndex = 0;
         int secMaxIndex = -1;
 
@@ -17,6 +15,5 @@ public class SecMaxArr {
             }
         }
         System.out.println("Secondo massimo: " + arr[secMaxIndex]);
-        
     }
 }

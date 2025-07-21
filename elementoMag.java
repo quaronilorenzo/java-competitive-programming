@@ -7,7 +7,7 @@ public class elementoMag {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.print("Enter x:");
         int x = myObj.nextInt();  // Read user input
-        System.out.println(x);
+        myObj.close();
         boolean flag = false;
         for(int i = 0 ; i < arr.length; i++){
             if(arr[i] > x){

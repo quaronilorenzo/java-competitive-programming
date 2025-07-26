@@ -1,4 +1,5 @@
 public class FormulaCoffee {
+    // https://www.codewars.com/kata/57db78d3b43dfab59c001abe
     public static int formula(int h, int coffee) {
         for (int cups = 1; cups <= 5000; cups++) {
             h += coffee;

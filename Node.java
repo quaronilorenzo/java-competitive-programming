@@ -29,6 +29,7 @@ public class Node {
         Node newHead = new Node(val); 
         newHead.next = head;
         head = newHead;
+        System.out.println(head.data); // verifichiamooo
         return head;
     }
     public static Node insertAtTail(Node head, int val) {
@@ -41,6 +42,7 @@ public class Node {
             temp = temp.next;
         }
         temp.next = newTail;
+        System.out.println(newTail.data); // verifichiamooo
         return head;
     }
     public static Node insertAtIndex(Node head, int index, int val) {
@@ -65,6 +67,6 @@ public class Node {
     public static void main(String[] args) {
         int[] arr = {4,1,2,4,5};
         Node head = stackingList(arr);
-        head = insertAtIndex(head, 2, 50);
+        head = insertAtIndex(head, 0, 50);
     }
 }

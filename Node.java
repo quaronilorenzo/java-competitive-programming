@@ -27,12 +27,23 @@ public class Node {
     // 1. Crea nuovo nodo
     // 2. Punta il nuovo nodo a head
     // 3. Aggiorna head e restituiscilo
-        Node newHead = new Node(val); // per quanto mi odierai!!! :(
+        Node newHead = new Node(val); 
         newHead.next = head;
         head = newHead;
         return head;
     }
-    
+    public static Node insertAtTail(Node head, int val) {
+    // Se la lista è vuota → crea nodo e ritorna
+    // Altrimenti scorri fino a last.next == null
+    // Collega il nuovo nodo in fondo
+        Node newTail = new Node(val, null);
+        Node temp = head;
+        while(temp.next != null){
+            temp = temp.next;
+        }
+        temp.next = newTail;
+        return head;
+    }
     public static void main(String[] args) {
         int[] arr = {4,1,2,4,5};
         Node head = stackingList(arr);

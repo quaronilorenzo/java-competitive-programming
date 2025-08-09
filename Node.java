@@ -12,10 +12,27 @@ public class Node {
         this.data = data;
         this.next = null;
     }
+    private static Node stackingList(int[] arr){
+        Node head = new Node(arr[0]);
+        Node mover = head; // store l'indirizzo di memoria di Head
+        System.out.println(mover.data); 
+        for(int i = 1; i < arr.length;i++){
+            Node temp = new Node(arr[i]);
+            mover.next =  temp;
+            mover = temp;
+        }
+        return head;
+    }
+    public static Node insertAtHead(Node head, int val) {
+    // 1. Crea nuovo nodo
+    // 2. Punta il nuovo nodo a head
+    // 3. Aggiorna head e restituiscilo
+    return head;
+    }
     
     public static void main(String[] args) {
-        int[] arr = {0,1,2,4,5};
-        Node y = new Node(arr[0]);
-        
+        int[] arr = {4,1,2,4,5};
+        Node head = stackingList(arr);
+
     }
 }

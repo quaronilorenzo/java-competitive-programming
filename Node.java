@@ -27,7 +27,10 @@ public class Node {
     // 1. Crea nuovo nodo
     // 2. Punta il nuovo nodo a head
     // 3. Aggiorna head e restituiscilo
-    return head;
+        Node newHead = new Node(val); // per quanto mi odierai!!! :(
+        newHead.next = head;
+        head = newHead;
+        return head;
     }
     
     public static void main(String[] args) {

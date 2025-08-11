@@ -113,7 +113,7 @@ public class Node {
         if(isListEmpty(head) == true || head.next == null){
             return null;
         }
-        Node temp = head; // penultimo
+        Node temp = head; // ricerca penultimo
         while(temp.next.next != null){
             temp = temp.next;
         }
@@ -121,7 +121,12 @@ public class Node {
         printList(head);
         return head;
     }
-
+    public static Node deleteByValue(Node head, int val) {
+    // Se lista vuota → return head
+    // Se il primo nodo ha quel valore → deleteHead
+    // Altrimenti scorri finché trovi val, scollegalo
+    return head;
+    }
 public static void main(String[] args) {
         int[] arr = {2,1,2,4,5};
         Node head = stackingList(arr);

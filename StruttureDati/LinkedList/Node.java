@@ -18,8 +18,7 @@ public class Node {
     private static Node stackingList(int[] arr){
         
         if(arr.length == 0){
-            Node head = new Node(0);
-            return head;
+            return null;
         }
         Node head = new Node(arr[0]);
         Node mover = head; // store l'indirizzo di memoria di Head
@@ -168,7 +167,7 @@ public class Node {
         return i;
     }
 public static void main(String[] args) {
-        int[] arr = {};
+        int[] arr = {1,3,4,5,6};
         Node head = stackingList(arr);
         System.out.println(length(head));
     }

@@ -192,6 +192,18 @@ public class Node {
         System.out.println(slow.data);
         return head;
     }
+    public static boolean hasCycle(Node head) {
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
 public static void main(String[] args) {
         int[] arr = {1,3,4,5,8,6};
         Node head = stackingList(arr);

@@ -16,6 +16,11 @@ public class Node {
         this.next = null;
     }
     private static Node stackingList(int[] arr){
+        
+        if(arr.length == 0){
+            Node head = new Node(0);
+            return head;
+        }
         Node head = new Node(arr[0]);
         Node mover = head; // store l'indirizzo di memoria di Head
         for(int i = 1; i < arr.length;i++){
@@ -152,9 +157,19 @@ public class Node {
         
         return false;
     }
+    public static int length(Node head) {
+    // Conta nodi
+        Node temp = head;
+        int i = 1;
+        while(temp.next != null){
+            temp = temp.next;
+            i++;
+        }
+        return i;
+    }
 public static void main(String[] args) {
-        int[] arr = {2,1,2,4,5};
+        int[] arr = {};
         Node head = stackingList(arr);
-        System.out.println(search(head,3));
+        System.out.println(length(head));
     }
 }

@@ -22,18 +22,18 @@ public class Node {
         }
         return head;
     }
-    public static Node isListEmpy(Node head){
+    public static boolean isListEmpy(Node head){
         if(head == null){
-            return null;
+            return false;
         }
-        return head;
+        return true;
     }
 
     public static Node insertAtHead(Node head, int val) {
     // 1. Crea nuovo nodo
     // 2. Punta il nuovo nodo a head
     // 3. Aggiorna head e restituiscilo
-        if(isListEmpy(head) == null){
+        if(isListEmpy(head) == false){
             System.out.println("La lista è vuota");
             return null;
         }
@@ -48,7 +48,7 @@ public class Node {
     // Se la lista è vuota → crea nodo e ritorna
     // Altrimenti scorri fino a last.next == null
     // Collega il nuovo nodo in fondo
-        if(isListEmpy(head) == null){
+        if(isListEmpy(head) == false){
             System.out.println("La lista è vuota");
             return null;
         }
@@ -65,7 +65,7 @@ public class Node {
         // Se index == 0 → insertAtHead
         // Scorri fino al nodo prima dell'indice
         // Collega il nuovo nodo in mezzo
-        if(isListEmpy(head) == null){
+        if(isListEmpy(head) == false){
             System.out.println("La lista è vuota");
             return null;
         }
@@ -89,15 +89,15 @@ public class Node {
     public static Node deleteHead(Node head) {
     // Se lista vuota → return null
     // Altrimenti head = head.next
-        if(isListEmpy(head) == null){
-            System.out.println("La lista è vuota");
-            return null;
-        }
-
+    if(isListEmpty(head) == false){
+        System.out.println("La lista è vuota");
+        return null;
+    }
         head = head.next;
         return head;
     }
-    public static void main(String[] args) {
+
+public static void main(String[] args) {
         int[] arr = {4,1,2,4,5};
         Node head = stackingList(arr);
         head = insertAtHead(head, 0);

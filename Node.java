@@ -22,11 +22,23 @@ public class Node {
         }
         return head;
     }
+    public static Node isListEmpy(Node head){
+        if(head == null){
+            return null;
+        }
+        return head;
+    }
+
     public static Node insertAtHead(Node head, int val) {
     // 1. Crea nuovo nodo
     // 2. Punta il nuovo nodo a head
     // 3. Aggiorna head e restituiscilo
-        Node newHead = new Node(val); 
+        if(isListEmpy(head) == null){
+            System.out.println("La lista è vuota");
+            return null;
+        }
+
+        Node newHead = new Node(val);
         newHead.next = head;
         head = newHead;
         System.out.println(head.data); // verifichiamooo
@@ -36,6 +48,10 @@ public class Node {
     // Se la lista è vuota → crea nodo e ritorna
     // Altrimenti scorri fino a last.next == null
     // Collega il nuovo nodo in fondo
+        if(isListEmpy(head) == null){
+            System.out.println("La lista è vuota");
+            return null;
+        }
         Node newTail = new Node(val, null);
         Node temp = head;
         while(temp.next != null){
@@ -49,6 +65,10 @@ public class Node {
         // Se index == 0 → insertAtHead
         // Scorri fino al nodo prima dell'indice
         // Collega il nuovo nodo in mezzo
+        if(isListEmpy(head) == null){
+            System.out.println("La lista è vuota");
+            return null;
+        }
         if(index == 0){
             insertAtHead(head, val);
             return head; // se l'indice è 0 insertiamo dal head
@@ -65,9 +85,21 @@ public class Node {
         System.out.println(newVal.data); // verifichiamooo
         return head;
     }
+
+    public static Node deleteHead(Node head) {
+    // Se lista vuota → return null
+    // Altrimenti head = head.next
+        if(isListEmpy(head) == null){
+            System.out.println("La lista è vuota");
+            return null;
+        }
+
+        head = head.next;
+        return head;
+    }
     public static void main(String[] args) {
         int[] arr = {4,1,2,4,5};
         Node head = stackingList(arr);
-        head = insertAtIndex(head, 2, 50);
+        head = insertAtHead(head, 0);
     }
 }

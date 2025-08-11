@@ -125,11 +125,24 @@ public class Node {
     // Se lista vuota → return head
     // Se il primo nodo ha quel valore → deleteHead
     // Altrimenti scorri finché trovi val, scollegalo
-    return head;
+        if(isListEmpty(head) == true){
+            return head;
+        }
+        if(head.data == val){
+            head = deleteHead(head);
+            return head;
+        }
+        Node temp = head;
+        while(temp.next.data != val){
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+        printList(head);
+        return head;
     }
 public static void main(String[] args) {
         int[] arr = {2,1,2,4,5};
         Node head = stackingList(arr);
-        head = deleteTail(head);
+        head = deleteByValue(head,2);
     }
 }

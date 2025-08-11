@@ -140,9 +140,21 @@ public class Node {
         printList(head);
         return head;
     }
+    public static boolean search(Node head, int val) {
+    // Scorri e controlla ogni nodo
+        Node temp = head;
+        while(temp.next != null){
+            if(temp.data == val){
+                return true;
+            }
+            temp = temp.next;
+        }
+        
+        return false;
+    }
 public static void main(String[] args) {
         int[] arr = {2,1,2,4,5};
         Node head = stackingList(arr);
-        head = deleteByValue(head,2);
+        System.out.println(search(head,3));
     }
 }

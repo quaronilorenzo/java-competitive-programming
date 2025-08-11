@@ -1,4 +1,4 @@
-package StruttureDati;
+
 public class Node {
     
     int data;
@@ -25,16 +25,16 @@ public class Node {
     }
     public static boolean isListEmpty(Node head){
         if(head == null){
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     public static Node insertAtHead(Node head, int val) {
     // 1. Crea nuovo nodo
     // 2. Punta il nuovo nodo a head
     // 3. Aggiorna head e restituiscilo
-        if(isListEmpty(head) == false){
+        if(isListEmpty(head) == true){
             System.out.println("La lista è vuota");
             return null;
         }
@@ -49,7 +49,7 @@ public class Node {
     // Se la lista è vuota → crea nodo e ritorna
     // Altrimenti scorri fino a last.next == null
     // Collega il nuovo nodo in fondo
-        if(isListEmpty(head) == false){
+        if(isListEmpty(head) == true){
             System.out.println("La lista è vuota");
             return null;
         }
@@ -66,7 +66,7 @@ public class Node {
         // Se index == 0 → insertAtHead
         // Scorri fino al nodo prima dell'indice
         // Collega il nuovo nodo in mezzo
-        if(isListEmpty(head) == false){
+        if(isListEmpty(head) == true){
             System.out.println("La lista è vuota");
             return null;
         }
@@ -90,17 +90,32 @@ public class Node {
     public static Node deleteHead(Node head) {
     // Se lista vuota → return null
     // Altrimenti head = head.next
-    if(isListEmpty(head) == false){
+    if(isListEmpty(head) == true){
         System.out.println("La lista è vuota");
         return null;
     }
         head = head.next;
         return head;
     }
+    public static Node deleteTail(Node head) {
+    // Se lista vuota o con 1 nodo → return null
+    // Scorri fino al penultimo nodo
+    // Imposta penultimo.next = null
+        if(isListEmpty(head) == true || head.next == null){
+            return null;
+        }
+        Node temp = head; // penultimo
+        while(temp.next.next == null){
+            temp = temp.next;
+        }
+        temp.next = null;
+        System.out.println();
+        return head;
+    }
 
 public static void main(String[] args) {
         int[] arr = {4,1,2,4,5};
         Node head = stackingList(arr);
-        head = insertAtHead(head, 0);
+        head = deleteTail(head);
     }
 }

@@ -1,3 +1,5 @@
+package StruttureDati.LinkedList;
+
 
 public class Node {
     
@@ -29,7 +31,13 @@ public class Node {
         }
         return false;
     }
-
+    public static void printList(Node head){
+        Node temp = head;
+        while(temp != null){
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+    }
     public static Node insertAtHead(Node head, int val) {
     // 1. Crea nuovo nodo
     // 2. Punta il nuovo nodo a head
@@ -38,11 +46,11 @@ public class Node {
             System.out.println("La lista è vuota");
             return null;
         }
-
         Node newHead = new Node(val);
         newHead.next = head;
         head = newHead;
         System.out.println(head.data); // verifichiamooo
+        printList(head);
         return head;
     }
     public static Node insertAtTail(Node head, int val) {
@@ -59,7 +67,7 @@ public class Node {
             temp = temp.next;
         }
         temp.next = newTail;
-        System.out.println(newTail.data); // verifichiamooo
+        printList(head);
         return head;
     }
     public static Node insertAtIndex(Node head, int index, int val) {
@@ -83,7 +91,7 @@ public class Node {
         }
         newVal.next = temp.next;
         temp.next = newVal;  // se vogliamo storare il nuovo valore dobbiamo fare temp.next non temp e basta, perchè se scegliamo l'indice uguale storreremo il dato 
-        System.out.println(newVal.data); // verifichiamooo
+        printList(head);
         return head;
     }
 
@@ -95,6 +103,7 @@ public class Node {
         return null;
     }
         head = head.next;
+        printList(head);
         return head;
     }
     public static Node deleteTail(Node head) {
@@ -105,16 +114,16 @@ public class Node {
             return null;
         }
         Node temp = head; // penultimo
-        while(temp.next.next == null){
+        while(temp.next.next != null){
             temp = temp.next;
         }
         temp.next = null;
-        System.out.println();
+        printList(head);
         return head;
     }
 
 public static void main(String[] args) {
-        int[] arr = {4,1,2,4,5};
+        int[] arr = {2,1,2,4,5};
         Node head = stackingList(arr);
         head = deleteTail(head);
     }

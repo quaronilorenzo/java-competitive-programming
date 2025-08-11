@@ -166,9 +166,35 @@ public class Node {
         }
         return i;
     }
+    public static Node reverse(Node head) {
+    // Usa prev, curr, next
+        Node curr = head;
+        Node prev = null;
+        Node next = null;
+        while(curr != null){
+            next = curr.next; // 2st
+            curr.next = prev; // null
+            prev = curr; // head
+            curr = next; // 2st
+        }
+        printList(prev);
+        return prev;
+    }
+    public static Node middleNode(Node head) {
+    // Slow e fast partono da head
+    // Fast avanza 2, slow 1
+        Node fast = head;
+        Node slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        System.out.println(slow.data);
+        return head;
+    }
 public static void main(String[] args) {
-        int[] arr = {1,3,4,5,6};
+        int[] arr = {1,3,4,5,8,6};
         Node head = stackingList(arr);
-        System.out.println(length(head));
+        head = middleNode(head);
     }
 }

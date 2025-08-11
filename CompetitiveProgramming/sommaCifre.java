@@ -1,3 +1,4 @@
+package CompetitiveProgramming;
 public class sommaCifre {
     public static void main(String[] args) {
         int numero = 1234;

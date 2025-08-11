@@ -1,3 +1,4 @@
+package CompetitiveProgramming;
 public class NumPari {
     public static void main(String[] args) {
     //  Stampa tutti i numeri pari in un array di interi.

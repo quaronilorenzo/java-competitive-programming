@@ -1,3 +1,4 @@
+package StruttureDati.Array;
 public class SecMaxArr {
     public static void main(String[] args) {
         int[] arr = {33,356,563,22,335,11010};

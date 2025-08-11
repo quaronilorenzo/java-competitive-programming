@@ -1,3 +1,4 @@
+package StruttureDati.Array;
 public class MaxArray {
     public static void main(String args[]){
         int arr[] = {1,2,10,4,6,6100,1000,3000};

@@ -1,3 +1,4 @@
+package StruttureDati.Array;
 public class ConteggioInversioni {
 
     public static int countInversions(int[] arr) {

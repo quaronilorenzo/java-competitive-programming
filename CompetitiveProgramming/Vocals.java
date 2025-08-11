@@ -1,3 +1,4 @@
+package CompetitiveProgramming;
 public class Vocals {
     public static void main(String[] args) {
         String parola = "ciao";

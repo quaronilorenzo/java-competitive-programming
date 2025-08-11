@@ -1,3 +1,4 @@
+package StruttureDati.Array;
 import java.util.HashMap;
 
 public class carattereMaggiore {

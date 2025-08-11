@@ -1,3 +1,4 @@
+package StruttureDati;
 public class Node {
     
     int data;
@@ -22,7 +23,7 @@ public class Node {
         }
         return head;
     }
-    public static boolean isListEmpy(Node head){
+    public static boolean isListEmpty(Node head){
         if(head == null){
             return false;
         }
@@ -33,7 +34,7 @@ public class Node {
     // 1. Crea nuovo nodo
     // 2. Punta il nuovo nodo a head
     // 3. Aggiorna head e restituiscilo
-        if(isListEmpy(head) == false){
+        if(isListEmpty(head) == false){
             System.out.println("La lista è vuota");
             return null;
         }
@@ -48,7 +49,7 @@ public class Node {
     // Se la lista è vuota → crea nodo e ritorna
     // Altrimenti scorri fino a last.next == null
     // Collega il nuovo nodo in fondo
-        if(isListEmpy(head) == false){
+        if(isListEmpty(head) == false){
             System.out.println("La lista è vuota");
             return null;
         }
@@ -65,7 +66,7 @@ public class Node {
         // Se index == 0 → insertAtHead
         // Scorri fino al nodo prima dell'indice
         // Collega il nuovo nodo in mezzo
-        if(isListEmpy(head) == false){
+        if(isListEmpty(head) == false){
             System.out.println("La lista è vuota");
             return null;
         }

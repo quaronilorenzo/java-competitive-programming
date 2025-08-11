@@ -1,3 +1,4 @@
+package CompetitiveProgramming;
 public class tempo {
     public static void printTempo(int[] arr){
         boolean tutto0 = true;

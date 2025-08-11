@@ -1,3 +1,4 @@
+package StruttureDati.HashMap;
 import java.util.*;
 
 public class RandomizedSet {

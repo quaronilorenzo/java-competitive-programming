@@ -1,3 +1,4 @@
+package StruttureDati.Array;
 public class SumArray {
         public static void main(String[] args) {
     //  Somma di tutti i contenuti dell'array.

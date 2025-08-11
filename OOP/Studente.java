@@ -1,3 +1,4 @@
+package OOP;
 public class Studente {
     public String nome = ""; 
     public String cognome = "";

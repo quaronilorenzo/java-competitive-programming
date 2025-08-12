@@ -11,7 +11,7 @@ public class Stack{
     }
     public boolean isStackEmpty(int top){
         if(top == -1 ){
-            return true; 
+            return true;
         }
         return false;
     }
@@ -41,7 +41,7 @@ public class Stack{
         }
     }
     public void printStack(Stack s){
-        for(int i = 0; i  <= s.arr.length-1 ; i++){
+        for(int i = 0; i  <= s.top ; i++){
             System.out.print(s.arr[i]+ " ");
         }
     }
@@ -62,16 +62,28 @@ public class Stack{
         
         return rev;
     }
-
-    public static void main(String[] args) {
-        Stack s = new Stack();
-        s.arr = s.push(s, 5);
-        s.arr = s.push(s, 8);
-        s.arr = s.push(s, 8);
-        s.arr = s.push(s, 5);
-        s.arr = s.push(s, 7);
-        System.out.println();
-        s.arr = s.reverseStack(s);
-        s.printStack(s);
+    public static Stack reverseUsingStack(Stack original){
+        Stack temp = new Stack();
+        while(!original.isStackEmpty(original.top)){
+            temp.push(temp, original.pop(original));
+        }
+        
+        return temp;
     }
+    public static void main(String[] args) {
+    Stack s = new Stack();
+    s.push(s, 5);
+    s.push(s, 8);
+    s.push(s, 3);
+    s.push(s, 100);
+    
+    System.out.println("Originale:");
+    s.printStack(s);
+
+    Stack reversed = reverseUsingStack(s);
+
+    System.out.println("Reversato:");
+    reversed.printStack(reversed);
+    }
+
 }

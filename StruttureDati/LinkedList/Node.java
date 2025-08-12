@@ -207,6 +207,6 @@ public class Node {
 public static void main(String[] args) {
         int[] arr = {1,3,4,5,8,6};
         Node head = stackingList(arr);
-        head = middleNode(head);
+        System.out.println(head);
     }
 }

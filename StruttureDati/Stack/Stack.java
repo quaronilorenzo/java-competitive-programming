@@ -9,6 +9,7 @@ public class Stack{
         this.length = 5;
         this.arr = new int[length];
     }
+    public void isStackEmpty(){}
     public int[] push(Stack s, int val){
         if(top == 4){ // se lo stack è pieno (il top è alla lunghezza del ultimo elemento del array)
             System.out.println("stack pieno!");
@@ -25,6 +26,10 @@ public class Stack{
             System.out.println(s.arr[top]);
         }
     }
+    public void sizeStack(Stack s){
+        System.out.println("Lunghezza stack:" + s.length);
+    }
+
     public static void main(String[] args) {
         Stack s = new Stack();
         s.push(s, 5);

@@ -1,9 +1,10 @@
+package SortingAlgorthms;
 public class mergeSort{
-    public static void mergeSort(int[] arr, int left, int right) {
+    public static void mergeSortFunction(int[] arr, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
-            mergeSort(arr, left, mid);
-            mergeSort(arr, mid + 1, right);
+            mergeSortFunction(arr, left, mid);
+            mergeSortFunction(arr, mid + 1, right);
             merge(arr, left, mid, right);
         }
     }
@@ -46,7 +47,7 @@ public class mergeSort{
         System.out.println("Array originale:");
         printArray(arr);
 
-        mergeSort(arr, 0, arr.length - 1);
+        mergeSortFunction(arr, 0, arr.length - 1);
 
         System.out.println("\nArray ordinato:");
         printArray(arr);
